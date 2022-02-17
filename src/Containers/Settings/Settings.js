@@ -82,7 +82,7 @@ export const Settings = () => {
     return (<>
         <Box m={2} mt={4}>
             <CssBaseline />
-            <h2><SettingsIcon /> Ajustes</h2>
+            <h1><SettingsIcon /> Ajustes</h1>
             <Grid container spacing={1}>
                 <Grid item xs={12}>
                     <SettingsArticle title={"Yakult"} buyPrice={yakultBuyPriceState} setBuyPrice={setYakultBuyPriceState} sellPrice={yakultSellPriceState} setSellPrice={setYakultSellPriceState} />

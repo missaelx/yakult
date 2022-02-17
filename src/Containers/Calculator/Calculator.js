@@ -1,5 +1,4 @@
 import CssBaseline from "@mui/material/CssBaseline";
-import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import {CalculatorInput} from "../../components/CalculatorInput/CalculatorInput";
 import {
@@ -9,9 +8,7 @@ import {
     DialogContent,
     DialogContentText,
     DialogTitle,
-    Grid,
-    Stack,
-    styled
+    Grid
 } from "@mui/material";
 import {useState} from "react";
 import CalculateIcon from "@mui/icons-material/Calculate";
@@ -76,6 +73,14 @@ export const Calculator = () => {
 
     }
 
+    const onCloseDialog = () => {
+        setAmountYakult(0);
+        setAmountYakult40LT(0);
+        setAmountSoful(0);
+        setAmountSofulBebible(0);
+        setDialogOpen(false)
+    }
+
     return (<>
         <Box m={2} mt={4}>
             <CssBaseline />
@@ -115,7 +120,7 @@ export const Calculator = () => {
 
             <Dialog
                 open={dialogOpen}
-                onClose={() => setDialogOpen(false)}
+                onClose={onCloseDialog}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
@@ -128,7 +133,7 @@ export const Calculator = () => {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setDialogOpen(false)} autoFocus>
+                    <Button onClick={onCloseDialog} autoFocus>
                         OK
                     </Button>
                 </DialogActions>

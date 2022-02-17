@@ -1,0 +1,19 @@
+version: "3.9"
+networks:
+  web:
+    external: true
+  internal:
+    external: false
+services:
+  yakult:
+    #build: ./
+    image: missaelxp/yakult
+    networks:
+      - internal
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.backend=yakult
+      - traefik.frontend.rule=Host:y.missael.dev
+      - traefik.port=80
+      - traefik.docker.network=web
